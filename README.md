@@ -6,33 +6,35 @@
 
 ### solの場合
 
-#### 1. `repgen.rb` をダウンロードし、sol上の任意のディレクトリに置きます。
+#### インストール
 
-#### 2. レポート用のYAMLファイルを作成します。
+`repgen.rb` をダウンロードして、 `ruby repngen.rb [入力ファイル名] >> [出力ファイル名]` と実行するだけなのですが、わからない場合は下のコマンドを実行してください。
 
-レポートのサンプル
-```
-執筆中...
-```
-
-#### 3. report.txtを生成します。
-
-下のコマンドを実行すると、 `repgen.rb` があるディレクトリに `report.txt` が生成されます。
+##### 最初の1回目だけ、準備として必要な作業
 
 ```
-> cd [repgen.rbがあるディレクトリへのパス]
-> ruby repgen.rb [レポートにしたいYAMLファイルへのパス]
+$ mkdir ~/.neunyan/
+$ cd .neunyan
+$ wget "https://raw.githubusercontent.com/neunyan/NAPE_report_generator/master/repgen.rb"
 ```
 
-レポートにしたいYAMLファイルを `report.yaml` として保存し、下のコマンドを実行すると、 `report.yaml` があるディレクトリに `report.txt` が生成されます。
+##### レポートを生成するたびに必要な作業
+
+教本準拠で、emacsの場合についてです。以下の操作でreport.yamlからreport.txtが生成されます。ディレクトリとファイル名はなんでもよいのですが、ここでは例として示しておきます。
 
 ```
-> cd [report.yamlがあるディレクトリへのパス]
-> ruby repgen.rb report.yaml
-```
+$ mkdir ~/NAPE/#[授業番号]
+$ cd ~/NAPE/#[授業番号]
+$ emacs report.yaml
 
-**良く分からない場合、 `report.yaml` を自身のホームディレクトリ（ログインしたときにいるディレクトリ）に作成して、以下のコマンドを実行してください。**
+--- emacsでレポートを作成して保存する ---
 
+$ ruby ~/.neunyan/repgen.rb/report.yaml >> report.txt
 ```
-執筆中...
-```
+### ありがちなエラーと確認事項
+
+#### No such file or directory @ rb_sysopen - XXXXXXXXXX (Errno::ENOENT)No such fil
+
+1. レポートにするYAMLファイルの名前はあっていますか？
+1. `file:` に指定したファイル名のファイルは存在しますか？
+
