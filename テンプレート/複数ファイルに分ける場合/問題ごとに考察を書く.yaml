@@ -1,0 +1,20 @@
+author: 1810999・電通大輔
+practice:
+  - #この行のハイフンを忘れないこと！
+    number: 1 #演習番号
+    source:
+      file: #ファイル名
+    result:
+      file: #ファイル名
+    consideration:
+      file: #ファイル名
+  - #この行のハイフンを忘れないこと！
+    number: 2 #演習番号
+    source: |-
+      部分的に直書きしてもOK
+      部分的に直書きしてもOK
+      部分的に直書きしてもOK
+    result:
+      file: #ファイル名
+    consideration:
+      file: #ファイル名
